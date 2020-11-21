@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EvaClock</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="js/js.js"></script>
+	<style>
+	/*
+		colors:
+		f7931d - yellow
+		ee1c23 - red
+		cbcbcb - grey
+	*/
+		@font-face {
+			font-family: 'lcd';
+			src: url('res/lcd.ttf');
+		}
+		body {
+			background: #000;
+		}.clock_btns {
+			position: relative;
+			top: 170px;
+			left: 100px;
+		}
+		.date {
+			width: 160px;
+			font-family: 'lcd';
+			font-size: 1.4em;
+			color: #f7931d;
+			position: relative;
+			top: 135px;
+			left: 550px;
+		}
+		.wrap {
+			font-family: helvetica;
+		}
+		.clock_wrap {
+			width: 700px;
+			height: 350px;
+			margin: 0 auto;
+			background: url(res/bg.png) no-repeat;
+			background-size: 100%;
+			position: relative;
+			top: 150px;
+		}
+		.clock_wrap_d {
+			width: 700px;
+			height: 350px;
+			margin: 0 auto;
+			background: url(res/bgr.png) no-repeat;
+			background-size: 100%;
+			position: relative;
+			top: 150px;
+		}
+		.clock {
+			text-align: center;
+			font-family: 'lcd';
+			/*font-size: 5em;*/
+			color: #f7931d;
+			width: 550px;
+			height: 100px;
+			line-height: 105px;
+			position: relative;
+			top: 150px;
+			left: 75px;
+			
+		}
+		.block {
+			display: inline-block;
+			vertical-align: top;
+		}
+		.btn {
+			width: 100px;
+			height: 42px;
+			background: #000;
+			border: #f7931d;
+			color: #f7931d;
+			text-align: center;
+			padding-top: 5px;
+		}
+		#active {
+			width: 80px;
+			height: 15px;
+			background: #ee1c23;
+			margin: 0 auto;
+
+		}
+		.digits {
+			height: 75px;
+		}
+		.mil {
+			width: 85px;
+			overflow-x: hidden;
+		}
+		.danger {
+			color: #ee1c23 !important;
+		}
+		.hour {
+			font-size: 6em;
+		}
+		.min {
+			font-size: 6em;
+		}
+		.sec {
+			font-size: 5.5em;
+		}
+		.mil {
+			padding-top: 3px;
+			font-size: 5em;
+		}
+		.status {
+			width: 50px;
+			height: 150px;
+			display: inline-block;
+			position: relative;
+			right: -40px;
+			top: -55px;
+		}
+		.external {
+			background: url(res/external.png) no-repeat;
+			background-size: 100%;
+			width: 110px;
+			height: 53px;
+		}
+		.internal {
+			background-size: 100%;
+			width: 110px;
+			height: 53px;
+		}
+		.batt {
+			background: url(res/batt.png) no-repeat;
+			background-size: 100%;
+			width: 110px;
+			height: 35px;			
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<div class="clock_wrap">
+			<div class="clock">
+				<div class="digits">
+					<div class="hour block">00</div>
+					<div class="block" style="font-size: 5.5em;">:</div>
+					<div class="min block">00</div>
+					<div class="block" style="font-size: 5.5em;">:</div>
+					<div class="sec block">00</div>
+					<div class="block" style="font-size: 5.5em;">:</div>
+					<div class="mil block">00</div>
+					<div class="status">
+						<div class="internal">&nbsp;</div>
+						<div class="batt">&nbsp;</div>
+						<div class="external">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+			<div class="clock_btns">
+				<div class="btn_stop block btn">STOP<div id="active">&nbsp;</div></div>
+				<div class="btn_clock block btn">SLOW</div>
+				<div class="btn_start block btn">NORMAL</div>
+				<div class="btn_race block btn">RACING</div>				
+			</div>
+			<div class="date block">
+				<div class="month block">
+				00
+				</div>
+				<div class="block">/</div>
+				<div class="day block">
+				00
+				</div>
+				<div class="block">/</div>
+				<div class="year block">
+				00
+				</div>								
+			</div>
+		</div>
+	</div>
+</body>
+</html>
